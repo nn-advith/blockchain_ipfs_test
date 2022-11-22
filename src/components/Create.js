@@ -53,7 +53,7 @@ class Create extends React.Component {
                         <label>Date of Issue</label>
                         <input type='date' onChange={(e) => this.setState({doi: e.target.value.toString().split("-").reverse().join("-")})} placeholder='Date of Issue'/>
                     </div>
-                <button className='btn  bg-success ' style={{maxWidth:'100px', marginBottom:'20px'}} onClick={() => {this.setState({action:1}); console.log(this.state)}}><b>Generate</b></button>
+                <button className='btn  bg-success ' style={{maxWidth:'100px', marginBottom:'20px'}} onClick={() => {this.setState({action:1}); this.props.generateFileName()}}><b>Generate</b></button>
             </div>
 
             :
@@ -107,13 +107,13 @@ class Create extends React.Component {
             
             
             <div style={{ margin: '50px', width: '786px', display: 'flex'}}>
-            <div style={{padding: '10px'}}>
+            {/* <div style={{padding: '10px'}}>
 
             <button className='btn  mb-7  bg-success ' style={{maxWidth:'100px'}} onClick={() => this.props.downloadFile()}><b>Download</b></button>
-            </div>
-            <div style={{display: 'flex', marginLeft: '20px', backgroundColor: '#ddd', padding: '10px', borderRadius: '5px'}}>
+            </div> */}
+            <div style={{display: 'flex', backgroundColor: '#ddd', padding: '10px', borderRadius: '5px'}}>
                 <input type='text' placeholder='Enter description' style={{width: '300px', padding: '2px'}} onChange={(e) => this.setState({desc: e.target.value})}/>
-            <button className='btn  mb-7  bg-success ' style={{maxWidth:'150px', marginLeft: '10px'}} onClick={() => {this.props.createAndUpload(this.state.desc)}}><b>Upload</b></button>
+            <button className='btn  mb-7  bg-success ' style={{ marginLeft: '10px'}} onClick={() => {this.props.createAndUpload(this.state.desc)}}><b>Download file and Upload to IPFS</b></button>
             </div>
             </div>
             </div>

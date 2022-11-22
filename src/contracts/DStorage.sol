@@ -9,7 +9,7 @@ contract DStorage {
     // Mapping fileId=>Struct
     mapping(uint256 => File) public files;
 
-    // Struct
+    // Struct of File
     struct File {
         uint256 fileId;
         string fileHash;
@@ -61,8 +61,8 @@ contract DStorage {
             _fileType,
             _fileName,
             _fileDescription,
-            now,
-            msg.sender
+            now, //for time
+            msg.sender //uploader
         );
 
         emit FileUploaded(
