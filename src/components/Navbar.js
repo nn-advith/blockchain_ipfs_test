@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
 import Identicon from 'identicon.js';
-import box from '../box.png'
+
 
 class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-dark bg-dark p-0 text-monospace">
+
+      <nav className="navbar navbar-expand-lg navbar-dark bg-warning text-monospace">
         <a
-          className="navbar-brand col-sm-3 col-md-2 mr-0"
-          href="http://www.dappuniversity.com/bootcamp"
-          target="_blank"
-          rel="noopener noreferrer"
+          className="navbar-brand col-sm-3 col-md-2 mr-0 text-dark"
+          href='https://cataas.com/#/'
         >
-          <img src={box} width="30" height="30" className="align-top" alt="" />
-          D$t0r@g3
+          {/* <img src={box} width="30" height="30" className="align-top" alt="" /> */}
+          <b >Digital Certification </b>
         </a>
-        <ul className="navbar-nav px-3">
-          <li>
-            <small id="account" >
+  
+
+  <div className="collapse navbar-collapse" id="navbarSupportedContent" >
+    <ul className="navbar-nav px-10 ml-auto">
+   
+
+
+      <li className="nav-item" style={{marginRight: '20px', cursor: 'pointer' }} onMouseDown={() => this.props.changePage(0)}>
+        <div className="nav-link text-dark">Upload</div>
+      </li>
+      <li className="nav-item" style={{marginRight: '20px', cursor: 'pointer' }} onMouseDown={() => this.props.changePage(1)}>
+        <div className="nav-link text-dark">Create & Upload</div>
+      </li>
+      <li className="nav-item" style={{marginRight: '20px', cursor: 'pointer' }} onMouseDown={() => this.props.changePage(2)}>
+        <div className="nav-link text-dark">Verify</div>
+      </li>
+
+      <li className="nav-link" style={{backgroundColor: '#444', borderRadius: '5px'}}>
+            <small id="account" style={{marginRight: '10px' }}>
               <a target="_blank"
               alt=""
               className='text-white'
@@ -31,14 +46,23 @@ class Navbar extends Component {
             ? <img
               alt=""
               className='nl-2'
+              style={{borderRadius: '50%'}}
               width='30'
               height='30'
               src={`data:image/png;base64, ${new Identicon(this.props.account, 30).toString()}`}/>
               : <span></span>
               }
-          </li>
-        </ul>
-      </nav>
+    </li>
+    </ul>
+   
+  </div>
+</nav>
+
+
+
+
+
+  
     );
   }
 }

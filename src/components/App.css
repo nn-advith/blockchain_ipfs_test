@@ -1,1 +1,27 @@
 /* Styles go here */
+
+.nav-link:hover {
+    font-weight: 700;
+}
+
+.form-certi  input{
+    max-width: 500px;
+    margin-bottom: 20px;
+    /* outline: none; */
+}
+
+
+.certificate-wrapper {
+    width: 786px;
+    height: 1115px;
+    background-color: #FFFA55;
+    border: 2px solid #000;
+    border-style: double;
+    outline: 4px solid #000;
+    outline-offset: -12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
